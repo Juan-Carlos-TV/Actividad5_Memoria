@@ -89,11 +89,24 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        #Va a una posición dentro de la casilla
-        goto(x + 2, y)
-        color('black')
-        #Escribe el valor que tiene mark
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        
+        #Determina si el número de la ficha es de uno o 2 digitos
+        #La posición adecuada se terminó calculando a cuantos px
+            #equivalía el tamaño de fuente seleccionado y
+            #ajustandolo para centrar el texto
+        if tiles[mark] < 10:
+            goto(x + 16, y+5)
+            color('black')
+        else:
+            goto(x + 8, y+5)
+            color('black')
+        
+        #Se redujo el tamaño de original de la fuente
+        #Escribe el valor que tiene mark una vez se determinó
+            #una posición adecuada
+        write(tiles[mark], font=('Arial', 20, 'normal'))
+            
+            
 
     #Actualiza el tablero
     update()
