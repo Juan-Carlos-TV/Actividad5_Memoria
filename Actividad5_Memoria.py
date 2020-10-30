@@ -94,9 +94,26 @@ def draw():
         color('black')
         #Escribe el valor que tiene mark
         write(tiles[mark], font=('Arial', 30, 'normal'))
-
+    
+    
+    
     #Actualiza el tablero
     update()
+    
+    juego_terminado = True
+    
+    for x in hide:
+        if x==True:
+            juego_terminado=False
+            break
+    if juego_terminado:
+        print('El juego ha terminado')
+        return
+        
+    
+    
+    
+    
     ontimer(draw, 100)
 
 
