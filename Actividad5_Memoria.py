@@ -116,12 +116,16 @@ def draw():
     #Actualiza el tablero
     update()
     
+    #Variable que determina si el juego terminó
     juego_terminado = True
     
+    #Mientras exista un true dentro de hide el juego
+        #no acaba
     for x in hide:
         if x==True:
             juego_terminado=False
             break
+    #Si juego terminado es true entonces termina el juego
     if juego_terminado:
         print('El juego ha terminado')
         return
