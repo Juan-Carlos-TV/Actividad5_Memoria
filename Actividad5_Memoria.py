@@ -13,6 +13,8 @@ tiles = list(range(32)) * 2
 #Inicializa state
 state = {'mark': None}
 #Inicializa Hide que indica si las fichas han sido descubiertas
+stateCount = {'Taps': 0}
+
 hide = [True] * 64
 
 def square(x, y):
@@ -62,6 +64,9 @@ def tap(x, y):
         hide[mark] = False
         #Se hace None a marK
         state['mark'] = None
+    
+    stateCount['Taps'] += 1
+    print('Número de taps: ', stateCount['Taps'])
 
 def draw():
     "Draw image and tiles."
